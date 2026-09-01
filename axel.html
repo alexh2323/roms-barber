@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axel — Roms Barber</title>
+<meta name="description" content="Axel, barbier au Roms Studio à Montpellier. Ses coupes, ses vidéos, son RDV.">
+<!-- TODO-LINK : AYEDN Axel = #ayedn-axel · IG Axel = #ig-axel -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%238fd3e8'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='18' font-weight='900' fill='%230c1216' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .profile{
+    display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,3.5vw,56px);
+    align-items:start;padding-top:clamp(28px,4vw,56px);
+  }
+  @media(max-width:820px){.profile{grid-template-columns:1fr}}
+  .profile .portrait{aspect-ratio:4/5;border-radius:var(--r);width:100%;object-fit:cover;border:1px solid var(--line)}
+  .profile-txt .tag{
+    color:var(--accent);font-weight:700;font-size:13px;
+    text-transform:uppercase;letter-spacing:.16em;display:block;margin-bottom:12px;
+  }
+  .profile-txt h1{
+    font-family:"Archivo Black",sans-serif;
+    font-size:clamp(48px,8vw,96px);line-height:.9;text-transform:uppercase;
+  }
+  .profile-txt .bio{color:var(--ink-2);margin:18px 0 8px;max-width:480px;font-size:16px}
+  .profile-txt .bio b{color:var(--ink);font-weight:600}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 24px}
+  .chips a{
+    border:1px solid var(--line);border-radius:999px;
+    padding:9px 18px;font-size:13px;font-weight:600;
+    transition:border-color .2s ease;
+  }
+  .chips a:hover{border-color:var(--accent)}
+  .profile-txt .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+
+  .sec{padding-top:clamp(48px,7vw,90px)}
+  .sec-title{
+    font-family:"Archivo Black",sans-serif;
+    font-size:clamp(24px,3vw,36px);text-transform:uppercase;
+    margin-bottom:clamp(18px,2.5vw,28px);
+    display:flex;align-items:baseline;gap:14px;
+  }
+  .sec-title small{color:var(--ink-3);font-size:13px;font-family:"Archivo",sans-serif;font-weight:500;letter-spacing:.08em;text-transform:none}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="bar">
+    <a class="back" href="rdv.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>RDV</a>
+    <a class="logo" href="index.html">Roms Barber</a>
+  </div>
+
+  <section class="profile">
+    <img class="portrait fade" src="photos/axel.webp" alt="Axel en coupe devant la Porte du Peyrou">
+    <div class="profile-txt fade">
+      <span class="tag">Barbier · Roms Studio</span>
+      <h1>Axel</h1>
+      <p class="bio">Barbier au <b>Roms Studio</b> à Montpellier. Même exigence, même finition — et plus de créneaux dispo. Coupe, dégradé, barbe.</p>
+      <div class="chips">
+        <!-- TODO-LINK : IG Axel -->
+        <a href="#ig-axel" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="cta-row">
+        <!-- TODO-LINK : AYEDN Axel -->
+        <a class="btn btn-accent" href="#ayedn-axel">Réserver sur AYEDN <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-title">Ses coupes</h2>
+    <!-- PHOTOS : mettre <img src="photos/axel-coupe-1.jpg" alt=""> dans chaque slide -->
+    <div class="carousel carousel--cuts" data-carousel>
+      <div class="carousel__viewport">
+        <div class="carousel__track">
+          <div class="carousel__slide ph"></div>
+          <div class="carousel__slide ph"></div>
+          <div class="carousel__slide ph"></div>
+          <div class="carousel__slide ph"></div>
+          <div class="carousel__slide ph"></div>
+          <div class="carousel__slide ph"></div>
+        </div>
+        <button class="carousel__arrow carousel__arrow--prev" aria-label="Précédent">&#8249;</button>
+        <button class="carousel__arrow carousel__arrow--next" aria-label="Suivant">&#8250;</button>
+      </div>
+      <div class="carousel__dots"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-title">En vidéo</h2>
+    <!-- VIDÉOS : remplacer les href par les liens des vidéos d'Axel, miniature en <img> dans le slide -->
+    <div class="carousel carousel--videos" data-carousel>
+      <div class="carousel__viewport">
+        <div class="carousel__track">
+          <a class="carousel__slide ph" href="#video-axel-1"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <a class="carousel__slide ph" href="#video-axel-2"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <a class="carousel__slide ph" href="#video-axel-3"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <button class="carousel__arrow carousel__arrow--prev" aria-label="Précédent">&#8249;</button>
+        <button class="carousel__arrow carousel__arrow--next" aria-label="Suivant">&#8250;</button>
+      </div>
+      <div class="carousel__dots"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <span>Roms Studio · Montpellier</span>
+      <div class="links">
+        <a href="rdv.html">RDV</a>
+        <a href="formation.html">Formation</a>
+        <a href="evenement.html">Événement</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

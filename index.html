@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roms Barber — Montpellier</title>
+<meta name="description" content="Roms Barber, barbier à Montpellier. RDV, formation, événements.">
+<!--
+  ═══════════════════════════════════════════
+  PHOTO DE FOND : déposer photos/hero.jpg
+  puis décommenter la ligne --photo ci-dessous
+  ═══════════════════════════════════════════
+-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%238fd3e8'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='18' font-weight='900' fill='%230c1216' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{display:flex;flex-direction:column;min-height:100svh}
+
+  .home{
+    flex:1;display:flex;flex-direction:column;
+    position:relative;
+    /* PHOTO DE FOND — décommenter quand photos/hero.jpg est en place :
+    background:linear-gradient(rgba(12,12,10,.55),rgba(12,12,10,.9)),url('photos/hero.jpg') center/cover no-repeat;
+    */
+    background:
+      radial-gradient(1000px 600px at 75% -10%, rgba(143,211,232,.06), transparent 60%),
+      var(--bg);
+  }
+
+  .home-top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:clamp(20px,3vw,36px) clamp(20px,4vw,56px);
+  }
+  .home-logo{
+    font-family:"Archivo Black",sans-serif;
+    font-size:clamp(20px,2.4vw,28px);
+    letter-spacing:.05em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:14px;
+  }
+  .home-top .city{
+    color:var(--ink-2);font-size:13px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.14em;
+  }
+
+  .home-center{
+    flex:1;display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(16px,3vw,40px) clamp(20px,4vw,56px) clamp(28px,4vw,56px);
+    gap:clamp(20px,3vw,36px);
+  }
+  .home-center .lead{
+    color:var(--ink-2);font-size:clamp(15px,1.4vw,18px);max-width:440px;
+  }
+  .home-center .lead b{color:var(--ink);font-weight:600}
+
+  .tiles{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:clamp(12px,1.6vw,20px);
+  }
+  @media(max-width:820px){.tiles{grid-template-columns:1fr}}
+
+  .tile{
+    position:relative;isolation:isolate;overflow:hidden;
+    aspect-ratio:1/1;
+    border:1px solid var(--line);border-radius:var(--r);
+    background:var(--bg-2);
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:clamp(20px,2.4vw,32px);
+    transition:border-color .25s ease;
+  }
+  @media(max-width:820px){.tile{aspect-ratio:5/3}}
+  .tile .bg{
+    position:absolute;inset:0;z-index:-2;
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .tile::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(13,17,20,.3),rgba(13,17,20,.55) 45%,rgba(13,17,20,.92) 100%);
+  }
+  .tile:hover{border-color:var(--accent)}
+  .tile:hover .bg{transform:scale(1.06)}
+  .tile .num{
+    color:rgba(233,237,240,.7);font-size:12px;font-weight:700;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .tile .word{
+    font-family:"Archivo Black",sans-serif;
+    font-size:clamp(30px,3.4vw,46px);
+    line-height:.95;text-transform:uppercase;letter-spacing:-.01em;
+  }
+  .tile .foot-row{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+  }
+  .tile .desc{
+    color:rgba(233,237,240,.72);font-size:13.5px;line-height:1.45;max-width:200px;
+  }
+  .tile .arr{
+    flex:none;width:44px;height:44px;border:1.5px solid rgba(233,237,240,.35);border-radius:50%;
+    display:grid;place-items:center;
+    background:rgba(13,17,20,.35);
+    transition:border-color .25s ease,background .25s ease,color .25s ease,transform .38s cubic-bezier(.65,0,.35,1);
+  }
+  .tile:hover .arr{border-color:var(--accent);background:var(--accent);color:var(--accent-ink);transform:rotate(-45deg)}
+
+  .home-foot{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    padding:0 clamp(20px,4vw,56px) clamp(20px,3vw,32px);
+    color:var(--ink-3);font-size:13px;
+  }
+  .home-foot .socials{display:flex;gap:18px;font-weight:600}
+  .home-foot .socials a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<main class="home">
+  <div class="home-top fade">
+    <span class="home-logo">Roms Barber</span>
+    <span class="city">Montpellier</span>
+  </div>
+
+  <div class="home-center">
+    <p class="lead fade">Fondateur du <b>Roms Studio</b> · <b>+500K</b> sur TikTok.<br>Le travail que tu vois en vidéo, sur ta tête.</p>
+
+    <nav class="tiles">
+      <a class="tile fade" href="rdv.html">
+        <img class="bg" src="photos/axel.webp" alt="" aria-hidden="true">
+        <span class="num">Le studio</span>
+        <span class="word">RDV</span>
+        <span class="foot-row">
+          <span class="desc">Roms &amp; Axel — réservation via AYEDN</span>
+          <span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+      <a class="tile fade" href="formation.html">
+        <img class="bg" src="photos/skool.webp" alt="" aria-hidden="true">
+        <span class="num">Apprendre</span>
+        <span class="word">Formation</span>
+        <span class="foot-row">
+          <span class="desc">Le Skool &amp; l'appel 1-1</span>
+          <span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+      <a class="tile fade" href="evenement.html">
+        <img class="bg" src="photos/roms.jpg" alt="" aria-hidden="true">
+        <span class="num">À venir</span>
+        <span class="word">Événement</span>
+        <span class="foot-row">
+          <span class="desc">Les prochains rendez-vous à ne pas rater</span>
+          <span class="arr"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+    </nav>
+  </div>
+
+  <div class="home-foot">
+    <div class="socials">
+      <a href="https://www.tiktok.com/@roms.barber" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.instagram.com/roms.barber/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@roms.barber" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <span>© 2026 Roms Barber · Roms Studio, Montpellier</span>
+  </div>
+</main>
+</body>
+</html>
